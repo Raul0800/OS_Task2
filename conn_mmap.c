@@ -23,7 +23,6 @@ void constructor(void){
 }
 
 void writeToComonSpace(void){
-	printListOfQuestions();
 	scanf("%d",sharedMemoryForQuestion);
 }
 

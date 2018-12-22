@@ -30,7 +30,6 @@ void constructor(void)
 void writeToComonSpace(void)
 {
 	int nQ; 
-	printListOfQuestions();
 	scanf("%d",&nQ);
 	write(fd_fifo,&nQ,sizeof(int));
 }

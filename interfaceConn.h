@@ -15,5 +15,5 @@ void constructor(void);
 void destructor(void);
 void writeToComonSpace(void);
 void readFromCommonSpace(void);
-
+void printListOfQuestions(void);
 

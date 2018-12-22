@@ -31,7 +31,6 @@ void printListOfQuestions()
 
 void writeToComonSpace(void){
 	static char buf[1];
-	printListOfQuestions();
 	scanf("%s",buf);
 	if (mq_send(mq, buf, 1,0) == -1){
 		printf("ERROR mq_send\n");
@@ -43,7 +42,6 @@ void readFromCommonSpace(void){
 	if (mq_receive(mq,ans,sizeof(char),NULL) == -1){
 		printf("ERROR mq_receive\n");
 	}
-	 
 	if (ans[0] == '1')
 		printf(q1);
 	if (ans[0] == '2')
