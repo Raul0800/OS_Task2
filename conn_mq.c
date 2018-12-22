@@ -33,7 +33,7 @@ void writeToComonSpace(void){
 	static char buf[1];
 	printListOfQuestions();
 	scanf("%s",buf);
-	if (mq_send(mq, buf, strlen(buf),0) == -1){
+	if (mq_send(mq, buf, 1,0) == -1){
 		printf("ERROR mq_send\n");
 	}
 }
@@ -43,25 +43,24 @@ void readFromCommonSpace(void){
 	if (mq_receive(mq,ans,sizeof(char),NULL) == -1){
 		printf("ERROR mq_receive\n");
 	}
-	int q;
- 	q = atoi(ans); 
-	if (q == 1)
+	 
+	if (ans[0] == '1')
 		printf(q1);
-	if (q == 2)
+	if (ans[0] == '2')
 		printf(q2);
-	if (q == 3)
+	if (ans[0] == '3')
 		printf(q3);
-	if (q == 4)
+	if (ans[0] == '4')
 		printf(q4);
-	if (q == 5)
+	if (ans[0] == '5')
 		printf(q5);
-	if (q == 6)
+	if (ans[0] == '6')
 		printf(q6);
-	if (q == 7)
+	if (ans[0] == '7')
 		printf(q7);
-	if (q == 8)
+	if (ans[0] == '8')
 		printf(q8);
-	if (q == 9)
+	if (ans[0] == '9')
 		printf(q9);
 	
 }
